@@ -1,7 +1,6 @@
 const getSchedules = require('./functions/get-schedules')
 
-module.exports.handler = async (event, context, callback) => {
+module.exports.handler = async (event) => {
   const { storeId, areaId } = event.body
-  const data = await getSchedules(storeId, areaId)
-  callback(null, data)
+  return getSchedules(storeId, areaId)
 }
